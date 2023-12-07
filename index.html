@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel.Io</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-...your-sha512-code-here..." crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" alt="logo" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Work</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+
+            </nav>
+            <div class="header-text">
+                <p>Junior Web Developer</p>
+                <h1>Hi 👋, I am <span>Daniel</span> <br> Micheli From Italy </h1>
+            </div>
+        </div>
+    </div>
+    <!-- -------about------------  -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias laboriosam mollitia sunt
+                        quae? Voluptate fugiat eveniet quod amet, minima eligendi magni quasi. Necessitatibus quam ipsam
+                        corporis exercitationem amet, officia ullam?</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Front-end</span><br> Angular</li>
+                            <li><span>Back-end</span><br>Mysql - Java - Spring</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2023</span><br>Corso Full-Stak presso LABFORTRAINING </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------- portfolio-------->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/angular.png">
+                    <div class="layer">
+                        <h3>Social Media aap</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus explicabo beatae
+                            perspiciatis ipsa porro voluptates ipsam asperiores iure est odit ullam aperiam doloremque
+                            atque voluptas iusto, illo unde, quam deleniti. </p>
+                        <a href=""><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work2.png">
+                    <div class="layer">
+                        <h3>Social Media aap</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus explicabo beatae
+                            perspiciatis ipsa porro voluptates ipsam asperiores iure est odit ullam aperiam doloremque
+                            atque voluptas iusto, illo unde, quam deleniti. </p>
+                        <a href=""><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work3.png">
+                    <div class="layer">
+                        <h3>Prossimamente...</h3>
+                        <p>Seguimi su i miei profili per rimanere aggiornato su nuovi progetti </p>
+                        <a href=""><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <!-- <a href="#" class="btn">See more</a> -->
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+
+
+
+    </script>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+
+</body>
+
+</html>

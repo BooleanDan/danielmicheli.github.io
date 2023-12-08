@@ -10,16 +10,18 @@
         integrity="sha512-...your-sha512-code-here..." crossorigin="anonymous">
 
 
+
+
 </head>
 
 <body>
     <div id="header">
-        <div class="container">
+        <div class="herobox">
             <nav>
-                <img src="images/logo.png" alt="logo" class="logo">
+                <div class="logo"><a href="#header">DM</a></div>
                 <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
+
+                    <li><a href="#about">About me</a></li>
                     <li><a href="#portfolio">Work</a></li>
                     <li><a href="#">Contact</a></li>
                     <i class="fas fa-times" onclick="closemenu()"></i>
@@ -28,8 +30,16 @@
 
             </nav>
             <div class="header-text">
-                <p>Junior Web Developer</p>
-                <h1>Hi 👋, I am <span>Daniel</span> <br> Micheli From Italy </h1>
+                <p>HI 👋, I'M </p>
+                <h1> <span>Daniel</span> Micheli <br>Web Developer</h1>
+                <p>BASED IN ROME</p>
+                <ul id="socialmenu">
+                    <li><a href="#"><i class="fab fa-github-square social"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter-square social"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin social"></i></a></li>
+                    <li><button><span>Resume</span></button></li>
+
+                </ul>
             </div>
         </div>
     </div>
@@ -130,6 +140,23 @@
 
 
 
+
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var socialIcons = document.querySelectorAll("#socialmenu li .social");
+
+            socialIcons.forEach(function (icon) {
+                icon.addEventListener("mouseenter", function () {
+                    icon.style.transform = "translateY(-5px)";
+                });
+
+                icon.addEventListener("mouseleave", function () {
+                    icon.style.transform = "translateY(0)";
+                });
+            });
+        });
 
     </script>
 

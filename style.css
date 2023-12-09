@@ -155,7 +155,7 @@ nav ul li a:hover::after {
 
 }
 
-button {
+#downloadButton {
     width: 100px;
     height: 32px;
     background-color: #1F1F1F;
@@ -165,6 +165,8 @@ button {
     transition: 0.3s;
     display: inline-block;
     margin-bottom: 10px;
+    border-radius: 2px;
+
 
 }
 
@@ -177,16 +179,17 @@ button span {
     font-weight: 500;
     line-height: normal;
     transition: 0.3s;
+
 }
 
 button span::after {
-    content: "➤";
-    margin-left: 5px;
+    content: "";
+
     opacity: 0;
     transition: opacity 0.3s ease, margin-left 0.3s ease;
 }
 
-button:hover {
+#downloadButton:hover {
     background-color: #f23333;
 }
 
@@ -195,9 +198,12 @@ button:hover span {
 }
 
 button:hover span::after {
+    content: "\f019";
+    font-family: 'Font Awesome 5 free';
+    font-weight: 900;
     opacity: 1;
     /* La freccia diventa visibile al passaggio del mouse */
-    margin-left: 5px;
+    margin-left: 10px;
     /* Regola la distanza tra lo span e la freccia al passaggio del mouse */
 }
 
@@ -214,6 +220,9 @@ button:hover span::after {
 #about {
     padding: 80px 0;
     color: #ababab;
+
+
+
 }
 
 .row {
@@ -260,7 +269,7 @@ button:hover span::after {
     content: "";
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: #f23333;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -278,7 +287,7 @@ button:hover span::after {
 }
 
 .tab-contents ul li span {
-    color: #b54769;
+    color: #f233339d;
     font-size: 14px;
 }
 
@@ -292,7 +301,9 @@ button:hover span::after {
 
 /* -------portfolio------------- */
 #portfolio {
+
     padding: 50px 0;
+
 }
 
 .work-list {
@@ -380,6 +391,138 @@ button:hover span::after {
     background: #ff004f;
 }
 
+/* ------- contact ---- */
+
+#contact {
+
+    padding: 50px 0;
+    background-image: url(images/Rectangle.png);
+}
+
+.contact-left {
+    flex-basis: 35%;
+}
+
+.contact-right {
+    flex-basis: 60%;
+}
+
+.contact-left h1 {
+
+    color: #1F1F1F;
+}
+
+.contact-left p {
+    margin-top: 30px;
+    color: #1F1F1F;
+}
+
+.contact-left p i {
+    color: #1F1F1F;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #1F1F1F;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+}
+
+.btn.btn2 {
+    display: inline-block;
+    background-color: #1F1F1F;
+    border: #080808;
+}
+
+.contact-right form {
+    width: 100%;
+
+}
+
+form input,
+form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+form .btn2 {
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 0;
+}
+
+
+
+/*------ pulsante scroll ------ */
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    background-color: #ababab;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#scrollToTopBtn::before {
+    content: '\25B2';
+    font-size: 15px;
+}
+
+
+#scrollToTopBtn.show {
+    opacity: 1;
+
+}
+
+.hidden {
+    display: none;
+}
+
+
+
 
 
 
@@ -393,40 +536,61 @@ nav .fas {
 @media only screen and (max-width: 600px) {
 
     #header {
-        background-image: url(images/phone-background.png);
+        background-image: url(images/me2\ copia.png);
     }
 
     .header-text {
-        margin-top: 100%;
+        margin-top: 50%;
         font-size: 16px;
+        color: #D9D9D9;
 
     }
 
     .header-text h1 {
         font-size: 30px;
+        color: #D9D9D9;
 
     }
 
     nav .fas {
         display: block;
         font-size: 25px;
+        cursor: pointer;
     }
 
     nav ul {
-        background: #ff004f;
+        background: #f23333;
         position: fixed;
         top: 0;
         right: -200px;
-        width: 200px;
-        height: 100vh;
-        padding-top: 50px;
+        width: -200px;
+        height: 0;
+        padding-top: 0;
         z-index: 2;
         transition: right 0.5s;
     }
 
     nav ul li {
         display: block;
-        margin: 25px;
+        margin-top: 25px;
+
+        text-align: center;
+    }
+
+    nav ul li a::after {
+
+        background: #D9D9D9;
+
+    }
+
+    nav ul li a {
+        color: white;
+        font-size: 40px;
+
+    }
+
+    nav ul li:first-child {
+        margin-top: 100px;
     }
 
     nav ul .fas {
@@ -436,6 +600,22 @@ nav .fas {
         cursor: pointer;
     }
 
+    #socialmenu i {
+        color: #D9D9D9;
+    }
+
+    #downloadButton {
+        background: #D9D9D9;
+
+    }
+
+    #downloadButton span {
+        color: #1f1f1f;
+    }
+
+    #downloadButton:hover span {
+        color: white;
+    }
 
     .sub-title {
         font-size: 40px;
@@ -457,4 +637,27 @@ nav .fas {
     .tab-links {
         font-size: 25px;
     }
+
+
+    /*-------about me -------*/
+
+    .about-col-1 {
+        display: none;
+    }
+
+    .contact-left,
+    .contact-right {
+        flex-basis: 100%;
+    }
+
+    .contact-left {
+        text-align: center;
+    }
+
+
+    /*-------portfolio  -------*/
+    .work .layer {
+        height: 100%;
+    }
+
 }

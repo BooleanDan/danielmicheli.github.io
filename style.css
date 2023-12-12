@@ -545,7 +545,7 @@ form .btn2 {
 
 }
 
-.hidden {
+#scrollToTopBtn.hidden {
     display: none;
 }
 

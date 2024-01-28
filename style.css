@@ -285,11 +285,23 @@ nav ul li a:hover::after {
 .tab-contents ul li {
     list-style: none;
     margin: 10px 0;
+    font-size: 20px;
+    color: white;
+}
+
+.tab-contents ul li a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.tab-contents ul li a:hover {
+    color: #f23333;
 }
 
 .tab-contents ul li span {
-    color: #f233339d;
-    font-size: 14px;
+    color: #f23333;
+    font-size: 20px;
 }
 
 .tab-contents {

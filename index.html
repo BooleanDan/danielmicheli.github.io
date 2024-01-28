@@ -36,8 +36,9 @@
                                 class="fab fa-github-square social"></i></a></div>
                     <div> <a href="https://twitter.com/DanielMicheli9" target="_blank"><i
                                 class="fab fa-twitter-square social"></i></a></div>
-                    <div><a href="#" target="_blank"><i class="fab fa-linkedin social"></i></a></div>
-                    <div><a href="https://drive.google.com/u/0/uc?id=1M4B1A9O97Q585ZTYZPDIyjgMDfVTEc_V&export=download"
+                    <div><a href="https://www.linkedin.com/in/daniel-micheli-0715252ab/" target="_blank"><i
+                                class="fab fa-linkedin social"></i></a></div>
+                    <div><a href="https://drive.google.com/u/0/uc?id=1zQGgsr5qmbWUrBHCNsFGMQheQIKFgRwc&export=download"
                             class="downloadButton"><span>Resume</span></a></div>
                 </div>
             </div>
@@ -77,8 +78,10 @@
                     </div>
                     <div class="tab-contents" id="education">
                         <ul>
-                            <li><span>2023</span><br>Corso Full-Stak presso LABFORTRAINING </li>
-                            <li><span>2011 - 2016</span><br>Diploma Ragioniere Programmatore presso IIS G. MARCONI</li>
+                            <li><span>2023</span><br>Corso Full-Stak presso <a href="https://www.labfortraining.it/"
+                                    target="_blank">LABFORTRAINING</a> </li>
+                            <li><span>2011 - 2016</span><br>Diploma Ragioniere Programmatore presso <a
+                                    href="https://www.iismarconi.edu.it/" target="_blank">IIS Marconi</a> </li>
 
                         </ul>
                     </div>
@@ -107,7 +110,8 @@
                         <h3>Spring - creazione API per sito di streaming</h3>
                         <p>Creazione di API che restituiscono una risposta in formato JSON. Le API sono state realizzate
                             in Java e interagiscono con i dati tramite un db Mysql</p>
-                        <a href="" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/danielmicheli/LabTv-Api" target="_blank"><i
+                                class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="work">
@@ -115,7 +119,8 @@
                     <div class="layer">
                         <h3>Prossimamente...</h3>
                         <p>Seguimi su i miei profili per rimanere aggiornato su nuovi progetti. </p>
-                        <a href="" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/danielmicheli" target="_blank"><i
+                                class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <!-- <a href="#" class="btn">See more</a> -->
@@ -142,7 +147,7 @@
                         <a href="#" target="_blank"><i class="fab fa-linkedin social"></i></a>
 
                     </div>
-                    <a href="https://drive.google.com/u/0/uc?id=1M4B1A9O97Q585ZTYZPDIyjgMDfVTEc_V&export=download"
+                    <a href="https://drive.google.com/u/0/uc?id=1zQGgsr5qmbWUrBHCNsFGMQheQIKFgRwc&export=download"
                         class="btn btn2">Download CV</a>
 
                 </div>
@@ -188,6 +193,10 @@
             scrollToTopBtn.addEventListener("click", function () {
                 scrollToTop();
             });
+
+            window.addEventListener("resize", gestisciCambiamentoViewport);
+
+            gestisciCambiamentoViewport();
         });
 
         function scrollToTop() {
@@ -195,11 +204,21 @@
                 top: 0,
                 behavior: "smooth"
             });
+
+        }
+
+        function gestisciCambiamentoViewport() {
+            var larghezzaViewport = window.innerWidth || document.documentElement.clientWidth;
+            var sidemenu = document.getElementById("sidemenu");
+
+            if (larghezzaViewport >= 600) {
+                sidemenu.style.right = "-100vh";
+                sidemenu.style.height = "100%";
+                sidemenu.style.width = "";
+            }
         }
 
     </script>
-
-
 
     <script>
 
@@ -231,6 +250,7 @@
         function closemenu() {
             sidemenu.style.right = "-100vh";
             sidemenu.style.height = "100%";
+            sidemenu.style.width = "";
         }
     </script>
 

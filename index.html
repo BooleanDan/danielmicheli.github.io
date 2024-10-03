@@ -114,6 +114,8 @@
                                 class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
+
+
                 <div class="work">
                     <img src="images/work3.png">
                     <div class="layer">
@@ -144,7 +146,8 @@
                                 class="fab fa-github-square social"></i></a>
                         <a href="https://twitter.com/DanielMicheli9" target="_blank"><i
                                 class="fab fa-twitter-square social"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-linkedin social"></i></a>
+                        <a href="https://www.linkedin.com/in/daniel-micheli-0715252ab/" target="_blank"><i
+                                class="fab fa-linkedin social"></i></a>
 
                     </div>
                     <a href="https://drive.google.com/u/0/uc?id=1zQGgsr5qmbWUrBHCNsFGMQheQIKFgRwc&export=download"
@@ -152,7 +155,7 @@
 
                 </div>
                 <div class="contact-right">
-                    <form method="post" name="submit-to-google-sheet">
+                    <form id="contact-form" action="https://formspree.io/f/xdkonowv" method="POST">
                         <input type="text" name="name" placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="Your Email" required>
                         <textarea name="message" rows="6" placeholder="Your message"></textarea>
@@ -255,6 +258,42 @@
     </script>
 
     <script>
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const formData = new FormData(form);
+            const msg = document.getElementById("msg");
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    msg.innerHTML = "Messaggio inviato con successo!";
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            msg.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            msg.innerHTML = "Ops! Qualcosa è andato storto...riprova!";
+                        }
+                    });
+                }
+            }).catch(error => {
+                msg.innerHTML = "Ops! Qualcosa è andato storto...riprova!";
+            });
+        });
+    </script>
+
+
+    <!-- <script>
+        Old script per il collegamento con google Sheet
+
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxS24KcZgs2rXDCIfLkDdI322L_ZI7Fht4jaMe445ZYd_6jhaCiEAzpWgjMgprG1kMC/exec'
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById("msg");
@@ -272,7 +311,7 @@
                 })
                 .catch(error => console.error('Error!', error.message))
         })
-    </script>
+    </script> -->
 
     <!-- <script>
         function reloadPageIfViewportStartsSmall() {
